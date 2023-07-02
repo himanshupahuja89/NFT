@@ -7,19 +7,16 @@ const dev = process.env.NODE_ENV != "production";
 const nextServer = next({ dev });
 const handle = nextServer.getRequestHandler();
 
-dotenv.config({ path: "./config.env" })
+dotenv.config({ path: "./.env" })
 
 const app = require("./app")
 
-const DB = process.env.DATABASE.replace(
-    "<PASSWORD>",
-    process.env.DATABASE_PASSWORD
-)
-
+const DB = process.env.DATABASE
 mongoose.connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useUnifiedTopology: true
 }).then(() => console.log("DB connection successful!"));
 
 const port = 3000;
