@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../Model/userModel");
+const bcrypt = require("bcryptjs");
 
 const signToken = async (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -58,7 +59,7 @@ const login = async (req, res, next) => {
     // Check if user exists and password is correct
     const user = await User.findOne({ email }).select("+password");
 
-    if (!user || !(await user.correctPassword(password, user.password))) {
+    if (!user || !(await bcrypt.compare(password, user.password))) {
         return res.status(401).json({
             status: "fail",
             message: "Incorrect email or password",
