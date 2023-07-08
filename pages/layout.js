@@ -1,9 +1,11 @@
 import React from 'react'
-import Logo from '../Components/Logo/Logo'
+import {Logo, Button } from '../Components'
 
 const layout = () => {
   return (
-    <div className='home'><Logo /></div>
+    <div className='home'><Logo />
+    <Button/>
+    </div>
   )
 }
 
