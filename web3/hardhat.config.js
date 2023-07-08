@@ -1,6 +1,8 @@
 /** @type import('hardhat/config').HardhatUserConfig */
+const dotenv = require("dotenv");
+dotenv.config({ path: "./.env" })
 
-const PRIVATE_KEY = "YOUR PRIVATE KEY";
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const RPC_URL = "https://rpc.ankr.com/polygon_mumbai";
 module.exports = {
   defaultNetwork: "polygon_mumbai",
@@ -14,7 +16,7 @@ module.exports = {
     },
   },
   solidity: {
-    version: "0.8.9",
+    version: "0.8.18",
     settings: {
       optimizer: {
         enabled: true,
