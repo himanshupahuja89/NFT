@@ -1,5 +1,5 @@
 import React from 'react'
-import { Logo, Button, Card, Footer } from '../Components'
+import { Logo, Button, Card, Footer, CheckBox } from '../Components'
 
 const layout = () => {
   return (
@@ -8,6 +8,8 @@ const layout = () => {
       <Card />
       <p> Footer </p>
       <Footer/>
+      <p> CheckBox </p>
+      <CheckBox/>
     </div>
   )
 }
