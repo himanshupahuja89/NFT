@@ -99,21 +99,21 @@
   -webkit-text-fill-color: transparent;
 }
 
-@media screen and (max-width: 55rem) {
+@media screen and (max-width: 55em) {
   .footer_box {
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
   }
 }
 
-@media screen and (max-width: 45rem) {
+@media screen and (max-width: 45em) {
   .footer_box {
     grid-template-columns: 1fr 2fr;
     width: 90%;
   }
 }
 
-@media screen and (max-width: 35rem) {
+@media screen and (max-width: 35em) {
   .footer_box {
     grid-template-columns: 1fr;
     width: 90%;
